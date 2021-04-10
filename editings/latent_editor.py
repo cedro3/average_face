@@ -23,7 +23,7 @@ class LatentEditor(object):
                 edit_latents.append(edit_latent)
             edit_latents = torch.cat(edit_latents)
         else:
-            edit_latents = latent + factor * direction
+            edit_latents = latent + factor/10 * direction
         return self._latents_to_image(edit_latents)
 
     def apply_sefa(self, latent, indices=[2, 3, 4, 5], **kwargs):
